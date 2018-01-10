@@ -1,0 +1,6 @@
+[packages]
+flask = "*"
+requests = ">=2.18.4"
+
+[requires]
+python_version = "3.6"

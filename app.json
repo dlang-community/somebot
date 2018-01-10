@@ -1,0 +1,19 @@
+{
+    "env": {
+        "GH_SECRET_VERIFY": {
+            "description": "The secret key used to verify messages were sent by github, same value need to be set in github."
+        },
+        "GH_TARGET_USER": {
+            "description": "The github username that contains the repos the pull requests should be made to."
+        },
+        "GH_USER": {
+            "description": "The github username of the bot that will represent all actions taken."
+        },
+        "GH_TOKEN": {
+            "description": "Token password for the GH_USER to login and use."
+        },
+        "GH_EMAIL": {
+            "description": "The email address to use for git commits for GH_USER."
+        }
+    }
+}
