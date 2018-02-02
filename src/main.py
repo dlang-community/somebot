@@ -81,13 +81,15 @@ def githubEventCreate(data):
 
         # TODO possibly handle case where multiple attempts can be made over time
         if res.status_code != requests.codes.created:
+            print("Failed to create pull request:\n", res)
             return json.dumps({'status': 'done'})
 
         values = dictToObject(res.json())
 
         res = ghRequestPost(values.issue_url + '/labels', json=['auto-merge'])
         if res.status_code != requests.codes.ok:
-            return json.dumps({'status': 'done'})
+            print("Failed to create label:\n", res)
+            continue
 
     return json.dumps({'status': 'done'})
 
