@@ -31,7 +31,7 @@ function createMergeBranch()
     cd ..
 
     # replace libdparse version requirement in dub.json
-    sed -i -E "s/\"libdparse\": \"[^\"]*\"/\"libdparse\": \"~>${tag:1}\"/" dub.json
+    sed -i -E "s/\"libdparse\"[^:]*:[^\"]*\"[^\"]*\"/\"libdparse\": \"~>${tag:1}\"/" dub.json
 
     # add the changes to the commit
     git add dub.json
